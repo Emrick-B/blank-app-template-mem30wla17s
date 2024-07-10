@@ -1,0 +1,25 @@
+version: "3"
+services:
+  linux:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "team-event-manager"
+    image: "demo/team-event-manager"
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/postgres-db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres-db
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres

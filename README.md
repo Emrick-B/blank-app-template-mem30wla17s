@@ -1,19 +1,30 @@
-# 🎈 Blank app template
+# team-event-manager
 
-A simple Streamlit app template for you to modify!
+## Getting started for dev
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+Run the application in local with: 
+```
+mvn spring-boot:run
+```
 
-### How to run it on your own machine
+Run you db in local in the folder docker-dev with:
+```
+cd docker-dev
+docker compose up --build
+cd ..
+```
 
-1. Install the requirements
+## Getting started with docker
+back-end server and launch the postgreSQL db.
+The following command run:
+Run compose with:
+```
+docker compose up --build
+```
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+## Spec
+![alt text](img/image.png)
 
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+## Swagger
+OpenAPI definition is available here:
+http://localhost:8080/swagger-ui/index.html
